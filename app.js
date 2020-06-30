@@ -4,7 +4,7 @@ const http = require('http');
 // de solicitudes y en realidad de manera background realiza algunos subprocesos multiples al aprovechar el sistema operativo
 const routes = require('./routes');
 
-console.log(routes.someText);
+//console.log(routes.someText);
 const server = http.createServer(routes.handler);
 
 server.listen(3000);
