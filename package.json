@@ -1,0 +1,21 @@
+{
+  "name": "completeguidenodejs",
+  "version": "1.0.0",
+  "description": "Course of complete NodeJs guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgePrado/completeGuideNodeJs.git"
+  },
+  "author": "George Prado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgePrado/completeGuideNodeJs/issues"
+  },
+  "homepage": "https://github.com/GeorgePrado/completeGuideNodeJs#readme"
+}
