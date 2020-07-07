@@ -8,3 +8,7 @@ console.log(routes.someText);
 const server = http.createServer(routes.handler);
 
 server.listen(3000);
+//to install new package you should use 
+// npm install <namePackage> --save      ... in production
+// npm install <namePackage> --save--dev ... only development environment
+// npm install <namePackage> -g          ... global enviroment

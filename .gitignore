@@ -1,7 +1,7 @@
 .idea
 node_modules/
+message1.txt
+message.txt
 npm-debug.log
 .vscode/
 .eslintrc.js
-message1.txt
-message.txt

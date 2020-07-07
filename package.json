@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/GeorgePrado/completeGuideNodeJs/issues"
   },
-  "homepage": "https://github.com/GeorgePrado/completeGuideNodeJs#readme"
+  "homepage": "https://github.com/GeorgePrado/completeGuideNodeJs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
