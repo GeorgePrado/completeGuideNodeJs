@@ -2,19 +2,21 @@
 //se utiliza el concepto de bucle de eventos o event loop, en multiples request es muy rapido en el manejo
 // de solicitudes y en realidad de manera background realiza algunos subprocesos multiples al aprovechar el sistema operativo
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
-app.use('/',(req ,res , next) => {
-    console.log('This always runs!');
-    next();
-    //next(); //Allows the request to coninue to the next middleware in line
-    //app.use abre un canal o middleware para solicitar o escuchar algun recurso
-});
+//si no parseamos el request entrante con bodyParser nos da undefined
+app.use(bodyParser.urlencoded({extended : false}));
 
 app.use('/add-product',(req ,res , next) => {
-    console.log('In another middleware!!');
-    // ... doesn't neccesary ste header for html
-    res.send('<h1>The product page</h1>')
+    console.log('This register a product!!');
+    res.send('<form action="/product" method="POST"><input type="text" name="product"><button type="submit">Add product</button></form>');
+});
+
+app.use('/product', (req ,res , next) => {
+    //console.log('req body: ' +  req.body);
+    console.log(req.body);
+    res.redirect('/');
 });
 
 app.use('/',(req ,res , next) => {
