@@ -5,30 +5,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const adminRoutes = require('./routes/admin');
+const shopRoutes  = require('./routes/shop');
+
 //si no parseamos el request entrante con bodyParser nos da undefined
 app.use(bodyParser.urlencoded({extended : false}));
 
-app.use('/add-product',(req ,res , next) => {
-    console.log('This register a product!!');
-    res.send('<form action="/product" method="POST"><input type="text" name="product"><button type="submit">Add product</button></form>');
-});
-
-//limitamos el middleware para product en solo dar la opcion a request del tipo POST
-//app.use('/product', (req ,res , next) => {
-app.post('/product', (req ,res , next) => {
-    //console.log('req body: ' +  req.body);
-    console.log(req.body);
-    let newProduct = req.body.product;
-    res.send(`<h3>You have register a new product!! ${newProduct} </h3>`);
-    //res.redirect('/');
-});
-
-app.use('/',(req ,res , next) => {
-    console.log('In the middleware to root!!');
-    res.send('<h1>Hello from Express!!</h1>')
-    //next(); //Allows the request to coninue to the next middleware in line
-    //app.use abre un canal o middleware para solicitar o escuchar algun recurso
-});
+app.use(shopRoutes);  
+app.use(adminRoutes); 
 
 // express have a embebed http to listen port
 app.listen(3000);
