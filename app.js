@@ -13,10 +13,14 @@ app.use('/add-product',(req ,res , next) => {
     res.send('<form action="/product" method="POST"><input type="text" name="product"><button type="submit">Add product</button></form>');
 });
 
-app.use('/product', (req ,res , next) => {
+//limitamos el middleware para product en solo dar la opcion a request del tipo POST
+//app.use('/product', (req ,res , next) => {
+app.post('/product', (req ,res , next) => {
     //console.log('req body: ' +  req.body);
     console.log(req.body);
-    res.redirect('/');
+    let newProduct = req.body.product;
+    res.send(`<h3>You have register a new product!! ${newProduct} </h3>`);
+    //res.redirect('/');
 });
 
 app.use('/',(req ,res , next) => {
