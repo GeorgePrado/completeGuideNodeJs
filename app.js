@@ -4,24 +4,18 @@
 const express = require('express');
 const app = express();
 
-app.use('/',(req ,res , next) => {
-    console.log('This always runs!');
+app.use('/',(req ,res ,next) => {
+    console.log("you are in the root page");
     next();
-    //next(); //Allows the request to coninue to the next middleware in line
-    //app.use abre un canal o middleware para solicitar o escuchar algun recurso
 });
 
-app.use('/add-product',(req ,res , next) => {
-    console.log('In another middleware!!');
-    // ... doesn't neccesary ste header for html
-    res.send('<h1>The product page</h1>')
+app.use('/users',(req ,res ,next) => {
+    console.log("you are in the section of users");
+    res.send('<h1>Hello this section is to users</h1>');
 });
 
-app.use('/',(req ,res , next) => {
-    console.log('In the middleware to root!!');
-    res.send('<h1>Hello from Express!!</h1>')
-    //next(); //Allows the request to coninue to the next middleware in line
-    //app.use abre un canal o middleware para solicitar o escuchar algun recurso
+app.use('/',(req ,res ,next) => {
+    res.send('<h1>Hi this is the root page</h1>');
 });
 
 // express have a embebed http to listen port
