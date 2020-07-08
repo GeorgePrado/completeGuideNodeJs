@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(shopRoutes);  
 app.use(adminRoutes); 
 
+app.use((req, res, next) => {
+    res.status(404).send('<h1>Page not found!!</h1>');
+});
+
 // express have a embebed http to listen port
 app.listen(3000);
 //to install new package you should use 
