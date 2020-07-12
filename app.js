@@ -11,6 +11,9 @@ const shopRoutes  = require('./routes/shop');
 
 //si no parseamos el request entrante con bodyParser nos da undefined
 app.use(bodyParser.urlencoded({extended : false}));
+//con express.static definimos la carpeta que compartirá recursos como imagenes, css, javascript
+app.use(express.static(path.join(__dirname,'public')));
+
 
 app.use(shopRoutes);  
 app.use('/admin',adminRoutes); 
