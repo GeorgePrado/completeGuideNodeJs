@@ -9,6 +9,9 @@ const app = express();
 const adminRoutes = require('./routes/admin');
 const shopRoutes  = require('./routes/shop');
 
+app.set('view engine','pug');
+app.set('views','templates'); //se establece el directorio "templates" para los archivos pug
+
 //si no parseamos el request entrante con bodyParser nos da undefined
 app.use(bodyParser.urlencoded({extended : false}));
 //con express.static definimos la carpeta que compartirá recursos como imagenes, css, javascript
