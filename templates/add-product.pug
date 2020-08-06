@@ -16,3 +16,9 @@ html(lang="en")
                         a(href="/admin/add-product") Add Product
                     li.main-header__item
                         a(href="/admin/products") All Products
+        main
+            form(action="/admin/product" method="POST")
+                .form-control
+                    input(type="text" name="product")#title
+                
+                button(type="submit") Add product

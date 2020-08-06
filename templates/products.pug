@@ -16,3 +16,10 @@ html(lang="en")
                         a(href="/admin/add-product") Add Product
                     li.main-header__item
                         a(href="/admin/products") All Products
+        main
+            if prods.length > 0
+                each product in prods
+                    h3 #{product.title}
+            else
+                h1 No Products!
+
